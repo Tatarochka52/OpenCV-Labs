@@ -116,13 +116,13 @@ int main() {
     int b_r = 0, b_g = 0, b_b = 0;
     for (int i = 0; i < height_pic - 1; i++) {
         for (int j = 0; j < width_pic - 1; j++) {
-            a_b = (int)my_gradient_pic.at<Vec3b>(i, j + 1)[0] - (int)my_blur_pic.at<Vec3b>(i, j)[0];
-            a_g = (int)my_gradient_pic.at<Vec3b>(i, j + 1)[1] - (int)my_blur_pic.at<Vec3b>(i, j)[1];
-            a_r = (int)my_gradient_pic.at<Vec3b>(i, j + 1)[2] - (int)my_blur_pic.at<Vec3b>(i, j)[2];
+            a_b = (int)my_gradient_pic.at<Vec3b>(i, j + 1)[0] - (int)my_gradient_pic.at<Vec3b>(i, j)[0];
+            a_g = (int)my_gradient_pic.at<Vec3b>(i, j + 1)[1] - (int)my_gradient_pic.at<Vec3b>(i, j)[1];
+            a_r = (int)my_gradient_pic.at<Vec3b>(i, j + 1)[2] - (int)my_gradient_pic.at<Vec3b>(i, j)[2];
 
-            b_b = (int)my_gradient_pic.at<Vec3b>(i + 1, j)[0] - (int)my_blur_pic.at<Vec3b>(i, j)[0];
-            b_g = (int)my_gradient_pic.at<Vec3b>(i + 1, j)[1] - (int)my_blur_pic.at<Vec3b>(i, j)[1];
-            b_r = (int)my_gradient_pic.at<Vec3b>(i + 1, j)[2] - (int)my_blur_pic.at<Vec3b>(i, j)[2];
+            b_b = (int)my_gradient_pic.at<Vec3b>(i + 1, j)[0] - (int)my_gradient_pic.at<Vec3b>(i, j)[0];
+            b_g = (int)my_gradient_pic.at<Vec3b>(i + 1, j)[1] - (int)my_gradient_pic.at<Vec3b>(i, j)[1];
+            b_r = (int)my_gradient_pic.at<Vec3b>(i + 1, j)[2] - (int)my_gradient_pic.at<Vec3b>(i, j)[2];
 
             my_gradient_pic.at<Vec3b>(i, j)[0] = a_b + b_b;
             my_gradient_pic.at<Vec3b>(i, j)[1] = a_g + b_g;
